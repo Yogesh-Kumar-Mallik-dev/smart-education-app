@@ -5,11 +5,12 @@ Repository : Yogesh-kumar-Mallik-dev
 #######################################################
 
 #######################################################
+
 The Team :--
 
-Team Name : 
+Team Name : Style and Script 
 
-Team Leader ;
+Team Leader : Jyotsna Tiwari 
 #######################################################
 Members List :--
 ##Format is ==> Name = GitHub Username##
