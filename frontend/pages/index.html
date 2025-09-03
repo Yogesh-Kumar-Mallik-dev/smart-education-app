@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/utils.js"></script>
-    <script src="../js/script.js" defer></script>
-    <title>Home Page</title>
+  <meta charset="UTF-8">
+  <title>Smart Education App - Institute Homepage</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/utils.js" defer></script>
+  <script src="../js/script.js" defer></script>
 </head>
 <body>
-    
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">SmartEd Institute</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-primary">Login</a>
+      <a href="signup.html" class="btn btn-secondary">Signup</a>
+      <button onclick="toggleTheme()" class="btn btn-accent">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Welcome to Smart Education</h1>
+    <p>Empowering Students, Teachers, and Institutions with Technology</p>
+    <a href="signup.html" class="btn btn-secondary">Get Started</a>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>The Smart Education App is designed to make learning more interactive, organized, and accessible for everyone in the institute.</p>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <h2>Our Features</h2>
+    <div class="feature-grid">
+      <div class="card card-primary">📊 Attendance Tracking</div>
+      <div class="card card-secondary">📝 Quizzes & Assignments</div>
+      <div class="card card-accent">📅 Study Planner</div>
+      <div class="card card-neutral">📢 Alerts & Notifications</div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="gallery-item">[Image 1]</div>
+        <div class="gallery-item">[Image 2]</div>
+        <div class="gallery-item">[Image 3]</div>
+        <div class="gallery-item">[Image 4]</div>
+        <div class="gallery-item">[Image 5]</div>
+        <div class="gallery-item">[Image 6]</div>
+      </div>
+    </div>
+    <div class="gallery-controls">
+      <button id="prev-slide" class="btn btn-accent">◀</button>
+      <div id="carousel-dots" class="carousel-dots"></div>
+      <button id="next-slide" class="btn btn-accent">▶</button>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements" class="achievements">
+    <h2>Achievements</h2>
+    <div class="achievements-grid">
+      <div class="achievement">🏆 <span class="counter" data-target="1000">0</span>+ Students Enrolled</div>
+      <div class="achievement">📚 <span class="counter" data-target="500">0</span>+ Quizzes Conducted</div>
+      <div class="achievement">🚀 <span class="counter" data-target="1">0</span> Hackathon Entry</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 SmartEd Institute | Built by Team Style and Script</p>
+  </footer>
 </body>
 </html>
