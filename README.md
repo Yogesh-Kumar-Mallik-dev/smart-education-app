@@ -13,7 +13,7 @@ Members List :--
 ##Format is ==> Name = GitHub Username##
 1) Yogesh = Yogesh-kumar-Mallik-dev
 2) Krish  = krishkr012
-3)
+3) Udit sharma = uditsharma224
 4)
 5)
 6)
