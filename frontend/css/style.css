@@ -7,9 +7,12 @@
   --text-secondary: #64748B;
 
   /* Hierarchy */
-  --primary: #3B82F6;       /* Blue = Main */
-  --secondary: #8B5CF6;     /* Purple = Secondary */
-  --accent: #F97316;        /* Orange = Accent */
+  --primary: #3B82F6;
+  /* Blue = Main */
+  --secondary: #8B5CF6;
+  /* Purple = Secondary */
+  --accent: #F97316;
+  /* Orange = Accent */
   --secondary-bg: #E2E8F0;
 }
 
@@ -35,7 +38,9 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Poppins', sans-serif;
 }
 
@@ -52,7 +57,8 @@ h1, h2, h3 {
 
 .navbar .logo {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 30px;
+  color: rebeccapurple
 }
 
 .navbar .nav-links {
@@ -78,7 +84,7 @@ h1, h2, h3 {
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, black 0%, purple 100%);
   color: white;
 }
 
@@ -90,7 +96,10 @@ h1, h2, h3 {
 /* ===================== */
 /* About & Features      */
 /* ===================== */
-.about, .features, .gallery, .achievements {
+.about,
+.features,
+.gallery,
+.achievements {
   padding: 3rem 2rem;
   text-align: center;
 }
@@ -115,10 +124,22 @@ h1, h2, h3 {
 }
 
 /* Use hierarchy */
-.card-primary   { background: var(--primary); }
-.card-secondary { background: var(--secondary); }
-.card-accent    { background: var(--accent); }
-.card-neutral   { background: var(--secondary-bg); color: var(--text-primary); }
+.card-primary {
+  background: var(--primary);
+}
+
+.card-secondary {
+  background: var(--secondary);
+}
+
+.card-accent {
+  background: var(--accent);
+}
+
+.card-neutral {
+  background:#cf68d5;
+  
+}
 
 /* ===================== */
 /* Gallery               */
@@ -139,7 +160,8 @@ h1, h2, h3 {
 
 /* Individual gallery items */
 .gallery-item {
-  min-width: calc(100% / 3); /* Show 3 by default */
+  min-width: calc(100% / 3);
+  /* Show 3 by default */
   background: var(--secondary-bg);
   height: 280px;
   border-radius: 10px;
@@ -155,12 +177,15 @@ h1, h2, h3 {
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .gallery-item {
-    min-width: calc(100% / 2); /* 2 visible on tablets */
+    min-width: calc(100% / 2);
+    /* 2 visible on tablets */
   }
 }
+
 @media (max-width: 600px) {
   .gallery-item {
-    min-width: 100%; /* 1 visible on mobile */
+    min-width: 100%;
+    /* 1 visible on mobile */
   }
 }
 
@@ -178,6 +203,7 @@ h1, h2, h3 {
   display: flex;
   gap: 0.5rem;
 }
+
 .carousel-dots button {
   width: 10px;
   height: 10px;
@@ -186,6 +212,7 @@ h1, h2, h3 {
   background: var(--text-secondary);
   cursor: pointer;
 }
+
 .carousel-dots button.active {
   background: var(--primary);
 }
@@ -215,9 +242,9 @@ h1, h2, h3 {
 /* Footer                */
 /* ===================== */
 .footer {
-  background: var(--secondary-bg);
+
   text-align: center;
-  padding: 1rem;
+  padding: 0rem;
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
@@ -235,9 +262,20 @@ h1, h2, h3 {
   display: inline-block;
 }
 
-.btn-primary   { background: var(--primary); color: white; }
-.btn-secondary { background: var(--secondary); color: white; }
-.btn-accent    { background: var(--accent); color: white; }
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: white;
+}
 
 /* ===================== */
 /* Messages / Alerts     */
@@ -254,11 +292,26 @@ h1, h2, h3 {
   animation: fadeIn 0.3s ease-in-out;
 }
 
-.msg-info    { background: var(--primary); }
-.msg-success { background: var(--secondary); }
-.msg-error   { background: var(--accent); }
+.msg-info {
+  background: var(--primary);
+}
+
+.msg-success {
+  background: var(--secondary);
+}
+
+.msg-error {
+  background: var(--accent);
+}
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
