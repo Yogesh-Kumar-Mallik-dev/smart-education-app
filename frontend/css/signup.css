@@ -1,101 +1,115 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, rgb(0, 0, 0) 0%, purple 100%);
-    min-height: 100vh;
-    margin: 0;
-}
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-.logo-circle img {
-  width: 30%;
-  height: 0%;
-  object-fit: contain;
-}
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background: linear-gradient(to right, dodgerblue, mediumturquoise);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(to right, steelblue, mediumaquamarine);
-}
-
-.btn-danger {
-    background: crimson;
-    color: white;
-}
-
-.btn-danger:hover {
-    background: firebrick;
-}
-
-.btn-light {
-    background: gainsboro;
-    color: dimgray;
-}
-
-.btn-light:hover {
-    background: lightgray;
-}
-
-.login-container {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    line-height: 1.6;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 2rem;
 }
 
-.login-box {
-    max-width: 400px;
-    width: 100%;
-    padding: 30px;
-}
-
-.login-box h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: rebeccapurple;
-}
-
-.login-box p {
-    color: gray;
-    margin-bottom: 20px;
-}
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: darkslategray;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
+.container {
+    background-color: White;
+    padding: 2rem;
     border-radius: 8px;
-    border: 1px solid silver;
-    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rebeccapurple;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: DimGray;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    color: DarkSlateGray;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+input,
+select {
+    width: 94%;
+    padding: 0.75rem;
+    border: 1px solid LightGray;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: DodgerBlue;
+}
+
+.btn {
+    background-color: DodgerBlue;
+    color: White;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: RoyalBlue;
+}
+
+.toggle-form {
+    margin-top: 1.5rem;
+    color: DimGray;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.toggle-form a {
+    color: DodgerBlue;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+/* Accessibility */
+:focus {
+    outline: 3px solid DodgerBlue;
+    outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
 }

@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Education App - Signup</title>
     <link rel="stylesheet" href="../css/signup.css">
 </head>
+
 <body>
-   <div id="loginScreen" class="login-container">
-        <div class="glass-card login-box">
-            <div style="text-align: center; margin-bottom: 20px;">
-                
-                <h1>Smart-Eduation-App</h1>
-                <p>Intelligent Learning System</p>
-            </div>
+    <div class="container" aria-live="polite">
+        <div class="logo">Smart Education App</div>
+        <p class="subtitle" id="form-subtitle">Your Gateway to Intelligent Learning</p>
 
-            <form id="loginForm">
-                <div class="form-group">
-                    <label>
-                        <h3>Username or Email</h3>
-                    </label>
-                    <input type="text" required placeholder="Enter your username or email">
-                </div>
-                <div class="form-group">
-                    <label>
-                        <h3>Password</h3>
-                    </label>
-                    <input type="password" required placeholder="Enter your password">
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:100%;">
-                    <i class="fas fa-sign-in-alt"></i> Login
-                </button>
-            </form>
-
-            <div style="margin-top: 20px; padding: 15px; background: aliceblue; border-radius: 8px;">
-                <h3 style="margin-bottom: 5px; color: darkslateblue;">Demo Credentials</h3>
-                <p style="font-size: 14px; color: steelblue;">Email: bbdit@gmail.com</p>
-                <p style="font-size: 14px; color: steelblue;">Password: 12345</p>
+        <!-- Login Form -->
+        <form id="login-form" aria-label="Login form">
+            <div class="form-group">
+                <label for="login-email">Email Address</label>
+                <input type="email" id="login-email" required placeholder="Enter your email" autocomplete="username" />
             </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required placeholder="Enter your password"
+                    autocomplete="current-password" />
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <!-- Sign Up Form -->
+        <form id="signup-form" aria-label="Sign up form" style="display: none;">
+            <div class="form-group">
+                <label for="signup-first-name">First Name</label>
+                <input type="text" id="signup-first-name" required placeholder="Enter your first name"
+                    autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+                <label for="signup-last-name">Last Name</label>
+                <input type="text" id="signup-last-name" required placeholder="Enter your last name"
+                    autocomplete="family-name" />
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email Address</label>
+                <input type="email" id="signup-email" required placeholder="Enter your email" autocomplete="email" />
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" required placeholder="Create a password"
+                    autocomplete="new-password" />
+            </div>
+            <div class="form-group">
+                <label for="signup-confirm-password">Confirm Password</label>
+                <input type="password" id="signup-confirm-password" required placeholder="Confirm your password"
+                    autocomplete="new-password" />
+            </div>
+            <div class="form-group">
+                <label for="signup-year">Academic Year</label>
+                <select id="signup-year" required>
+                    <option value="">Select your Academic Year</option>
+                    <option value="1st-Year">1st Year</option>
+                    <option value="2nd-Year">2nd Year</option>
+                    <option value="3rd-Year">3rd Year</option>
+                    <option value="4th-Year">4th Year</option>
+                    <option value="Passed-out">Passed out</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <div class="toggle-form" role="region" aria-live="polite">
+            <span id="toggle-text">Don't have an account? <a href="#" id="toggle-link">Sign Up</a></span>
         </div>
-    </div> 
+    </div>
 </body>
+
 </html>
