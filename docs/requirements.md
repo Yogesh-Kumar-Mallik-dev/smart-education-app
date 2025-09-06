@@ -37,7 +37,7 @@ Our solution provides a **study planner, quiz portal, performance dashboard, and
 ## 👥 Team Responsibilities
 - Yogesh → Repo setup, To be decided.
 - Krish → Login and Sign up without JS ,  To be decided.
-- Udit → To be decided.
+- Udit → dashboard
 - Khushi → To be decided.
 - Jyotsna → To be decided.
 - Shaurya → To be decided.
