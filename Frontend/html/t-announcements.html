@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teacher Dashboard — Announcements</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="../js/t-dashboard.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">ED</div>
+        <div>
+          <h1>SmartEdu — Teacher</h1>
+          <div class="small">Announcements</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="students.html" class="nav-link">Students</a>
+        <a href="attendance.html" class="nav-link">Attendance</a>
+        <a href="timetable.html" class="nav-link">Timetable</a>
+        <a href="assignments.html" class="nav-link">Assignments</a>
+        <a href="announcements.html" class="nav-link active">Announcements</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <div><h2>Announcements</h2></div>
+        <div><button class="btn" id="btnNewAnn">+ Post</button></div>
+      </header>
+
+      <section class="card">
+        <div id="annList"></div>
+      </section>
+
+      <section class="card" style="margin-top:12px">
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="btnExportAnn">Export JSON</button>
+          <button class="btn ghost" id="btnClearAll">Clear All</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Root -->
+  <div id="modalRoot" class="modal-root"></div>
+
+  <!-- Shared teacher logic -->
+  <script>
+    function renderAnnouncementsPage(){
+      renderAnnouncements();
+
+      el('#btnNewAnn').onclick = () => openNewAnnouncementModal();
+
+      el('#btnExportAnn').onclick = () => {
+        downloadJSON(state.announcements, 'announcements.json');
+      };
+
+      el('#btnClearAll').onclick = () => {
+        if(!confirm('Clear all announcements?')) return;
+        state.announcements = [];
+        saveData();
+        renderAnnouncements();
+      };
+    }
+
+    renderAnnouncementsPage();
+  </script>
+</body>
+</html>

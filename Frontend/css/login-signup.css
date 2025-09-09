@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+  --accent-color: #8672FF;
+  --base-color: white;
+  --text-color: #2E2B41;
+  --input-color: #F3F0FF;
+  --label-width: 120px;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-family: Poppins, Segoe UI, sans-serif;
+  font-size: 12pt;
+  color: var(--text-color);
+  text-align: center;
+}
+body{
+  min-height: 100vh;
+  background-image: url(../../Assets/Images/background.jpg);
+  background-size: cover;
+  background-position: right;
+  overflow: hidden;
+  font-family: 'Poppins';
+}
+.wrapper{
+  box-sizing: border-box;
+  background-color: var(--base-color);
+  height: 100vh;
+  width: max(40%, 600px);
+  padding: 10px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+form{
+  width: min(400px, 100%);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+form > div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+form label{
+  flex-shrink: 0;
+  height: 50px;
+  width: 50px;
+  background-color: var(--accent-color);
+  fill: var(--base-color);
+  color: var(--base-color);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+form input{
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  font: inherit;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid var(--input-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
+}
+form input:hover{
+  border-color: var(--accent-color);
+}
+form input:focus{
+  outline: none;
+  border-color: var(--text-color);
+}
+div:has(input:focus) > label{
+  background-color: var(--text-color);
+}
+form input::placeholder{
+  color: var(--text-color);
+}
+form button{
+  margin-top: 10px;
+  border: none;
+  border-radius: 1000px;
+  padding: .85em 4em;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+form button:hover{
+  background-color: var(--text-color);
+}
+form button:focus{
+  outline: none;
+  background-color: var(--text-color);
+}
+a{
+  text-decoration: none;
+  color: var(--accent-color);
+}
+a:hover{
+  text-decoration: underline;
+}
+@media(max-width: 1100px){
+  .wrapper{
+    width: min(600px, 100%);
+    border-radius: 0;
+  }
+}
+form div.incorrect label{
+  background-color: #f06272;
+}
+form div.incorrect input{
+  border-color: #f06272;
+}
+#error-message{
+  color:#f06272;
+}
+
+/* make select visually identical to the inputs used in the form */
+#role-select,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 20px;               /* match input text size */
+  color: #222;
+  background: #f3eefc;           /* match your input background */
+  border: none;
+  padding: 18px 22px;
+  border-radius: 28px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  line-height: 1;
+}
+
+/* Style the Role select box */
+#role-select {
+  width: 100%;
+  padding: 18px 22px;
+  font-size: 18px;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: #f3eefc;             /* same as input background */
+  border: none;
+  border-radius: 28px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  outline: none;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #333 50%),
+    linear-gradient(135deg, #333 50%, transparent 50%);
+  background-position: calc(100% - 28px) center, calc(100% - 22px) center;
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+  padding-right: 52px;
+}
+
+#role-select:focus {
+  box-shadow: 0 10px 30px rgba(107, 33, 168, 0.12);
+}
+
+/* Dropdown options */
+#role-select option {
+  background: #ffffff;             /* white dropdown background */
+  color: #1a1a1a;                  /* dark text */
+  font-size: 16px;
+  padding: 12px 16px;
+}
+
+/* Highlight on hover (for browsers that support it) */
+#role-select option:hover {
+  background: #e4d8f9;             /* light purple highlight */
+  color: #000000;
+}
+
+/* Selected option style */
+#role-select option:checked {
+  background: #a78bfa;             /* purple theme for selected */
+  color: #ffffff;
+}
+
+/* When the layout collapses on small screens, let the select be full-width */
+@media (max-width: 720px) {
+  #role-select {
+    width: 100%;
+    margin-left: 0;
+  }
+}

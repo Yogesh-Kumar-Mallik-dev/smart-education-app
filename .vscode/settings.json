@@ -1,0 +1,37 @@
+{
+  // Keep CSS validation for your files
+  "css.validate": true,
+
+  // Suppress warnings in bootstrap.css and bootstrap.min.css
+  "files.associations": {
+    "bootstrap.css": "ignore",
+    "bootstrap.min.css": "ignore"
+  },
+
+  // If you use Stylelint extension, ignore Bootstrap files
+  "stylelint.validate": ["css", "scss"],
+  "stylelint.config": {
+    "ignoreFiles": [
+      "**/bootstrap.css",
+      "**/bootstrap.min.css"
+    ]
+  },
+
+   // Default tab size for all files
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  // Ensure HTML, CSS, and JS follow this
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  }
+}

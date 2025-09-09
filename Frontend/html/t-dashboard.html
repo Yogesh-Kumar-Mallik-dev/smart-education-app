@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teacher Dashboard — Overview</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script defer src="../js/t-dashboard.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">ED</div>
+        <div>
+          <h1>SmartEdu — Teacher</h1>
+          <div class="small">Overview & quick actions</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Overview</a>
+        <a href="students.html" class="nav-link">Students</a>
+        <a href="attendance.html" class="nav-link">Attendance</a>
+        <a href="timetable.html" class="nav-link">Timetable</a>
+        <a href="assignments.html" class="nav-link">Assignments</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="btn" id="btnExportAll">Export All</button>
+        <button class="btn ghost" id="btnResetLocal">Reset</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="topbar">
+        <div class="search">
+          <input id="globalSearch" placeholder="Search across classes, students...">
+        </div>
+        <div>
+          <span class="small-muted">Signed in as <strong>Teacher</strong></span>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Overview</h2>
+        <p class="small-muted">Quick stats for classes, students, and timetable.</p>
+        <div class="overview-cards" id="overviewCards"></div>
+      </section>
+
+      <section class="card">
+        <h3>Recent activity</h3>
+        <div id="activityLog"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Shared teacher logic -->
+  <script>
+    const overviewCards = el('#overviewCards');
+
+    function renderOverview(){
+      const classes = state.classes.length;
+      const students = state.students.length;
+      const timetable = state.timetable.length;
+      overviewCards.innerHTML = `
+        <div class="card"><h4>Classes</h4><div style="font-size:24px;font-weight:700">${classes}</div><div class="small-muted">Active classes</div></div>
+        <div class="card"><h4>Students</h4><div style="font-size:24px;font-weight:700">${students}</div><div class="small-muted">Total students</div></div>
+        <div class="card"><h4>Timetable</h4><div style="font-size:24px;font-weight:700">${timetable}</div><div class="small-muted">Scheduled slots</div></div>
+      `;
+    }
+
+    renderOverview();
+    renderAll();
+
+    el('#btnExportAll').onclick = () => downloadJSON(state, 'teacher-export.json');
+    el('#btnResetLocal').onclick = resetData;
+  </script>
+</body>
+</html>

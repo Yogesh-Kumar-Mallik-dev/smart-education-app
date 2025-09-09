@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BBDIT — Babu Banarasi Das Institute of Technology</title>
+
+  <link rel="stylesheet" href="../../Assets/Components/Bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../css/main.css">
+
+  <script defer src="../../Assets/Components/Bootstrap/bootstrap.bundle.js"></script>
+  <script defer src="../js/main.js"></script>
+
+</head>
+<body>
+
+  <section id="home">
+  <nav class="navbar navbar-expand-md navbar-light  py-3 mb-4 border-bottom">
+    <div class="container">
+
+      <!-- brand / logo -->
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="../../Assets/Icons/logo.png" alt="BBDIT Logo" width="55" height="40" class="me-2 logos">
+        <span class="ms-1 fw-semibold">BBDIT</span>
+      </a>
+
+      <!-- toggler / hamburger (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+              aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- collapsible content -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#admission">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why">Why</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        </ul>
+
+        <div class="d-flex ms-md-3">
+          <a href="login.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
+          <a href="signup.html"><button type="button" class="btn btn-primary">Sign-up</button></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  </section>
+
+
+  <!-- ================ ADMISSIONS HERO ================ -->
+  <section id="admissions" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        
+        <!-- Image column -->
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="../../Assets/Images/BBDIT-HERO.jpg" 
+              alt="Students on campus at BBDIT" 
+              class="img-fluid rounded shadow-sm" loading="lazy">
+        </div>
+
+        <!-- Text column -->
+        <div class="col-lg-6 order-2 order-lg-1">
+          <h1 class="display-5 fw-bold lh-1 mb-3">Admissions Open — Babu Banarasi Das Institute of Technology (BBDIT)</h1>
+          <p class="lead text-muted mb-4">
+            Apply for undergraduate and postgraduate programs at BBDIT. We offer industry-aligned curriculum, hands-on labs, internships, and scholarship opportunities to help you grow.
+          </p>
+
+          <ul class="list-unstyled mb-4">
+            <li><strong>Start Term:</strong> <span class="text-secondary">Fall 2025</span></li>
+            <li><strong>Application Deadline:</strong> <span class="text-secondary">Aug 31, 2025</span></li>
+            <li><strong>Scholarships:</strong> Merit and need-based awards available</li>
+          </ul>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</button>
+            <a href="#courses" class="btn btn-outline-secondary btn-lg">View Courses</a>
+          </div>
+
+          <p class="small text-muted mt-3">Questions? Email <a href="mailto:admissions@bbdit.example" class="link-secondary">admissions@bbdit.example</a> or call <a href="tel:+911234567890" class="link-secondary">+91 12345 67890</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ END ADMISSIONS HERO ================ -->
+
+  <!-- ================ COURSES ================ -->
+  <section id="courses" class="py-5 bg-white">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-4">
+        <div>
+          <h2 class="h3 mb-1">Our Programs</h2>
+          <p class="text-muted mb-0">Undergraduate and postgraduate programs designed with industry collaboration and practical exposure.</p>
+        </div>
+
+        <div class="mt-3 mt-md-0 d-flex gap-2 align-items-center">
+          <select id="courseFilterDept" class="form-select form-select-sm">
+            <option value="all">All Departments</option>
+            <option value="cs">Computer Science</option>
+            <option value="ee">Electronics</option>
+            <option value="me">Mechanical</option>
+            <option value="ba">Business</option>
+          </select>
+
+          <input id="courseSearch" class="form-control form-control-sm" type="search" placeholder="Search courses" aria-label="Search courses" style="min-width:200px;">
+        </div>
+      </div>
+
+      <div id="coursesGrid" class="row g-4">
+        <!-- Course cards will be populated server-side or via JS data; sample cards included -->
+        <div class="col-12 col-sm-6 col-lg-4 course-card" data-dept="cs" data-title="BSc Computer Science" data-desc="Four-year program covering algorithms, systems, databases and web development.">
+          <div class="card h-100">
+            <img src="../../Assets/Icons/B.tech-C.png" width="55" height="40" class="me-2 logos" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-2">B.Tech Computer Science</h5>
+              <p class="card-text text-muted small mb-3">4 years • Intake: 120</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <button class="btn btn-outline-primary btn-sm course-details-btn" data-bs-toggle="modal" data-bs-target="#courseModal">Details</button>
+                <button class="btn btn-secondary btn-sm enroll-btn">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 course-card" data-dept="ee" data-title="BEng Electronics" data-desc="Electronics engineering with embedded systems, signal processing and lab work.">
+          <div class="card h-100">
+            <img src="../../Assets/Icons/BBA.png" width="55" height="40" class="me-2 logos" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-2">BBA</h5>
+              <p class="card-text text-muted small mb-3">3 years • Intake: 60</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <button class="btn btn-outline-primary btn-sm course-details-btn" data-bs-toggle="modal" data-bs-target="#courseModal">Details</button>
+                <button class="btn btn-secondary btn-sm enroll-btn">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more sample cards or populate dynamically -->
+        <div class="col-12 col-sm-6 col-lg-4 course-card" data-dept="ba" data-title="BA Business Administration" data-desc="Business fundamentals, entrepreneurship and internship opportunities.">
+          <div class="card h-100">
+            <img src="../../Assets/Icons/MBA.png" width="55" height="40" class="me-2 logos" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-2">MBA</h5>
+              <p class="card-text text-muted small mb-3">3 years • Intake: 80</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <button class="btn btn-outline-primary btn-sm course-details-btn" data-bs-toggle="modal" data-bs-target="#courseModal">Details</button>
+                <button class="btn btn-secondary btn-sm enroll-btn">Enroll</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /coursesGrid -->
+    </div>
+  </section>
+  <!-- ================ END COURSES ================ -->
+
+  <section id="why">
+  <div class="container px-4 py-5" id="features">
+    <h2 class="pb-2 border-bottom">Why Choose BBDIT?</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      
+      <div class="col d-flex align-items-start">
+        <div class="icon-square bg-light text-dark flex-shrink-0 me-3 rounded d-flex align-items-center justify-content-center" style="width:48px;height:48px;">
+          <svg class="bi" width="1.5em" height="1.5em" fill="currentColor"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h3 class="fs-5">Cutting-Edge Labs</h3>
+          <p class="text-muted">Hands-on learning with well-equipped computer, electronics, and mechanical labs designed for practical exposure.</p>
+          <a href="#courses" class="btn btn-sm btn-primary">Explore Courses</a>
+        </div>
+      </div>
+
+      <div class="col d-flex align-items-start">
+        <div class="icon-square bg-light text-dark flex-shrink-0 me-3 rounded d-flex align-items-center justify-content-center" style="width:48px;height:48px;">
+          <svg class="bi" width="1.5em" height="1.5em" fill="currentColor"><use xlink:href="#people-fill"></use></svg>
+        </div>
+        <div>
+          <h3 class="fs-5">Experienced Faculty</h3>
+          <p class="text-muted">Learn from senior professors and industry professionals committed to mentoring and real-world learning.</p>
+          <a href="#reviews" class="btn btn-sm btn-outline-primary">See Reviews</a>
+        </div>
+      </div>
+
+      <div class="col d-flex align-items-start">
+        <div class="icon-square bg-light text-dark flex-shrink-0 me-3 rounded d-flex align-items-center justify-content-center" style="width:48px;height:48px;">
+          <svg class="bi" width="1.5em" height="1.5em" fill="currentColor"><use xlink:href="#tools"></use></svg>
+        </div>
+        <div>
+          <h3 class="fs-5">Industry Projects</h3>
+          <p class="text-muted">Work on real-world problems with partner companies through internships, hackathons and capstone projects.</p>
+          <a href="#admissions-hero" class="btn btn-sm btn-outline-secondary">Apply Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+
+  <!-- Carousel -->
+  <section id="carousel">
+  <div class="container text-center my-3">
+      <h2 class="font-weight-light">Campus Life — Some Snaps of BBDIT</h2>
+      <div class="row mx-auto my-auto justify-content-center">
+          <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <div class="col-md-3">
+                          <div class="card">
+                              <div class="card-img">
+                                  <img src="../../Assets/Images/BBDIT-1.jpg" class="img-fluid" alt="BBDIT campus image 1">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-md-3">
+                          <div class="card">
+                              <div class="card-img">
+                                  <img src="../../Assets/Images/BBDIT-2.jpg" class="img-fluid" alt="BBDIT campus image 2">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-md-3">
+                          <div class="card">
+                              <div class="card-img">
+                                  <img src="../../Assets/Images/BBDIT-3.jpg" class="img-fluid" alt="BBDIT campus image 3">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-md-3">
+                          <div class="card">
+                              <div class="card-img">
+                                  <img src="../../Assets/Images/BBDIT-4.jpg" class="img-fluid" alt="BBDIT campus image 4">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-md-3">
+                          <div class="card">
+                              <div class="card-img">
+                                  <img src="../../Assets/Images/BBDIT-5.webp" class="img-fluid" alt="BBDIT campus image 5">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="col-md-3">
+                          <div class="card">
+                              <div class="card-img">
+                                  <img src="../../Assets/Images/BBDIT-6.jpg" class="img-fluid" alt="BBDIT campus image 6">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev" aria-label="Previous slide">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </a> 
+              <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next" aria-label="Next slide">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </a>
+          </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- ================ REVIEWS / TESTIMONIALS ================ -->
+  <section id="reviews" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="h3">What Our Students Say</h2>
+        <p class="text-muted">Real experiences from our vibrant BBDIT community</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Review Card 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+              <p class="card-text flex-grow-1">
+                “BBDIT transformed the way I approach learning — practical labs and supportive faculty helped me land internships.”
+              </p>
+              <div class="text-warning small">
+                ★★★★☆
+              </div>
+              <div class="d-flex align-items-center mt-3">
+                <img src="../../Assets/Images/B Pharma default .jpg" alt="Student photo" class="rounded-circle me-3" width="48" height="48">
+                <div>
+                  <h6 class="mb-0">Priya Sharma</h6>
+                  <small class="text-muted">B Pharma</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+              <p class="card-text flex-grow-1">
+                “Admissions were straightforward, and the scholarship options made it possible for me to study here without financial worry.”
+              </p>
+              <div class="text-warning small">
+                ★★★★☆
+              </div>
+              <div class="d-flex align-items-center mt-3">
+                <img src="../../Assets/Images/Ratan-Gupt.jpeg" alt="Student photo" class="rounded-circle me-3" width="48" height="48">
+                <div>
+                  <h6 class="mb-0">Ratan Gupta</h6>
+                  <small class="text-muted">B.Tech - C.S.E</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+              <p class="card-text flex-grow-1">
+                “Project work and industry tie-ups at BBDIT helped me gain real experience and secure an internship during my second year.”
+              </p>
+              <div class="text-warning small">
+                ★★★★☆
+              </div>
+              <div class="d-flex align-items-center mt-3">
+                <img src="../../Assets/Images/saurabh-pandey.png" alt="Student photo" class="rounded-circle me-3" width="48" height="48">
+                <div>
+                  <h6 class="mb-0">Saurabh Pandey</h6>
+                  <small class="text-muted">B.Tech - C.S.E</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /row -->
+    </div>
+  </section>
+  <!-- ================ END REVIEWS ================ -->
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <!-- contact info -->
+        <div class="col-lg-5">
+          <h2 class="h3 mb-3">Get in touch</h2>
+          <p class="text-muted">Questions, suggestions or complaints — our team will respond within 2 business days.</p>
+
+          <ul class="list-unstyled mb-4">
+            <li class="mb-2"><strong>Office:</strong> Babu Banarasi Das Institute of Technology, Campus Building A</li>
+            <li class="mb-2"><strong>Email:</strong> <a href="mailto:hello@bbdit.example" class="link-secondary">hello@bbdit.example</a></li>
+            <li class="mb-2"><strong>Phone:</strong> <a href="tel:+911234567890" class="link-secondary">+91 12345 67890</a></li>
+          </ul>
+
+          <div class="mt-3">
+            <p class="mb-1"><strong>Hours</strong></p>
+            <p class="small text-muted mb-0">Mon — Fri: 9:00 — 18:00</p>
+          </div>
+        </div>
+
+        <!-- contact form -->
+        <div class="col-lg-7">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <form id="contactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input id="name" name="name" type="text" class="form-control" required minlength="2" placeholder="Your name">
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" name="email" type="email" class="form-control" required placeholder="you@example.com">
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input id="subject" name="subject" type="text" class="form-control" required placeholder="Short subject">
+                    <div class="invalid-feedback">Please enter a subject.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" required placeholder="Write your message"></textarea>
+                    <div class="invalid-feedback">Message can’t be empty.</div>
+                  </div>
+
+                  <!-- honeypot field (hidden) to help block bots -->
+                  <div style="display:none;">
+                    <label for="website">Website</label>
+                    <input id="website" name="website" type="text" />
+                  </div>
+
+                  <div class="col-12 d-flex align-items-center">
+                    <button id="contactSubmit" class="btn btn-primary me-3" type="submit">Send message</button>
+                    <div id="contactStatus" class="small text-muted"></div>
+                  </div>
+                </div>
+              </form>
+            </div> <!-- card-body -->
+          </div> <!-- card -->
+        </div>
+      </div><!-- row -->
+    </div><!-- container -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pt-5 pb-4 border-top">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 d-flex align-items-center">
+          <img src="../../Assets/Icons/logo.png" alt="BBDIT logo" width="44" height="32" class="me-2">
+          <div>
+            <div class="fw-bold">BBDIT</div>
+            <small class="text-muted">Babu Banarasi Das Institute of Technology</small>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="#contact" class="link-secondary">Contact</a></li>
+            <li class="list-inline-item"><a href="#" class="link-secondary">Privacy</a></li>
+            <li class="list-inline-item"><a href="#" class="link-secondary">Terms</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
+          <!-- small inline social icons (SVGs) -->
+          <a class="me-2" href="#" aria-label="Twitter" title="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-secondary" aria-hidden="true"><path d="M22 5.9c-.6.3-1.2.6-1.9.7.7-.4 1.2-1 1.5-1.8-.7.4-1.4.7-2.2.9C18.9 5 18 4.5 17 4.5c-1.9 0-3.3 1.8-2.9 3.6-2.4-.1-4.6-1.3-6-3 .5.8 1.4 1.3 2.3 1.4-.9 0-1.6-.3-2.3-.6-.1 2 1.4 3.8 3.4 4.2-.5.1-1 .2-1.5.2-.4 0-.8 0-1.2-.1.8 2.3 3.1 3.9 5.8 3.9-2 1.6-4.5 2.5-7.2 2.5-.5 0-1 0-1.5-.1C7.8 20 10 21 12.4 21c7.1 0 11-6.1 11-11.4v-.5c.8-.6 1.4-1.3 1.9-2.1-.7.3-1.4.5-2.2.6z"/></svg>
+          </a>
+
+          <a class="me-2" href="#" aria-label="Github" title="Github">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-secondary" aria-hidden="true"><path d="M12 .5C5.6.5.6 5.6.6 12c0 5.1 3.3 9.4 7.9 10.9.6.1.9-.3.9-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.6-1.6-1.4-2-1.4-2-1.2-.8.1-.8.1-.8 1.3.1 2 1.4 2 1.4 1.1 1.9 2.9 1.4 3.6 1 .1-.8.4-1.4.7-1.8-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.6 11.6 0 0 1 6 0C17 5 18 5.3 18 5.3c.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.2 0 4.5-2.6 5.4-5.3 5.8.4.4.8 1 .8 2v2.9c0 .3.3.7.9.6 4.6-1.5 7.9-5.8 7.9-10.9C23.4 5.6 18.4.5 12 .5z"/></svg>
+          </a>
+
+          <a href="#" aria-label="LinkedIn" title="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-secondary" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.98h4.98V24H0V8.98zM8.21 8.98h4.78v2.07h.07c.67-1.2 2.3-2.47 4.73-2.47 5.05 0 5.98 3.32 5.98 7.64V24h-4.98v-7.53c0-1.8 0-4.12-2.51-4.12-2.51 0-2.89 1.96-2.89 3.98V24H8.21V8.98z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col text-center small text-muted">
+          &copy; <span id="year"></span> Babu Banarasi Das Institute of Technology (BBDIT) — All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Apply Modal -->
+  <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <form id="applyForm" class="needs-validation" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title" id="applyModalLabel">Application — BBDIT Admissions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="appName" class="form-label">Full name</label>
+                <input id="appName" name="name" type="text" class="form-control" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="appEmail" class="form-label">Email</label>
+                <input id="appEmail" name="email" type="email" class="form-control" required>
+                <div class="invalid-feedback">Enter a valid email.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="appCourse" class="form-label">Course</label>
+                <select id="appCourse" name="course" class="form-select" required>
+                  <option value="">Choose...</option>
+                  <option value="BSc Computer Science">BSc Computer Science</option>
+                  <option value="BEng Electronics">BEng Electronics</option>
+                  <option value="BA Business Administration">BA Business Administration</option>
+                </select>
+                <div class="invalid-feedback">Select a course.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="appPhone" class="form-label">Phone</label>
+                <input id="appPhone" name="phone" type="tel" class="form-control">
+              </div>
+
+              <div class="col-12">
+                <label for="appStatement" class="form-label">Why do you want to join?</label>
+                <textarea id="appStatement" name="statement" class="form-control" rows="4"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <div class="me-auto text-muted small" id="applyStatus"></div>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit application</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Details Modal -->
+  <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseModalLabel">Course Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="courseModalDesc" class="text-muted"></p>
+          <ul id="courseModalDetails" class="list-unstyled small">
+            <li><strong>Duration:</strong> <span id="courseDuration">—</span></li>
+            <li><strong>Intake:</strong> <span id="courseIntake">—</span></li>
+            <li><strong>Eligibility:</strong> <span id="courseEligibility">—</span></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary enroll-btn-modal">Enroll</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+
+  
+</body>
+</html>

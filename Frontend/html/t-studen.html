@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teacher Dashboard — Students</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script defer src="../js/t-dashboard.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">ED</div>
+        <div>
+          <h1>SmartEdu — Teacher</h1>
+          <div class="small">Students</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="students.html" class="nav-link active">Students</a>
+        <a href="attendance.html" class="nav-link">Attendance</a>
+        <a href="timetable.html" class="nav-link">Timetable</a>
+        <a href="assignments.html" class="nav-link">Assignments</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="btn" id="btnImportCsv">Import CSV</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <div class="search">
+          <input id="searchStudent" placeholder="Search students by name or roll">
+        </div>
+        <div>
+          <button class="btn" id="btnAddStudent">+ New Student</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Students</h2>
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roll</th>
+              <th>Class</th>
+              <th>Grade</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h3>Bulk actions</h3>
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="btnAssignAll">Assign to Class</button>
+          <button class="btn ghost" id="btnExportStudents">Export CSV</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Root -->
+  <div id="modalRoot" class="modal-root"></div>
+
+  <!-- Shared teacher logic -->
+  <script>
+    function renderStudentsPage(){
+      renderStudentsTable();
+
+      // search
+      el('#searchStudent').oninput = (e) => renderStudentsTable(e.target.value);
+
+      // add student
+      el('#btnAddStudent').onclick = () => openAddStudentModal();
+
+      // export
+      el('#btnExportStudents').onclick = () => {
+        const rows = [['id','name','roll','classId','grade']];
+        state.students.forEach(s => rows.push([s.id,s.name,s.roll,s.classId,s.grade||'']));
+        downloadCSV(rows, 'students-all.csv');
+      };
+
+      // import
+      el('#btnImportCsv').onclick = () => openImportCsvModal();
+    }
+
+    renderStudentsPage();
+  </script>
+</body>
+</html>

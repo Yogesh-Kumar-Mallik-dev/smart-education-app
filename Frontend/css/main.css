@@ -1,0 +1,281 @@
+/* ===============================
+   Solve It Custom Bootstrap Theme
+   ===============================
+   🎨 Color Palette
+   -------------------------------
+   PRIMARY (Purple / Indigo)
+   - Base: #6f42c1 (rgb: 111,66,193)
+   - Hover: #5e36a8 (rgb: 94,54,168)
+   - Active: #6610f2 (rgb: 102,16,242)
+   - Active Border: #5a0ecf (rgb: 90,14,207)
+   - Deep Border: #593399 (rgb: 89,51,153)
+
+   SECONDARY (GitHub Green)
+   - Base: #2ea44f (rgb: 46,164,79)
+   - Hover: #278a42 (rgb: 39,138,66)
+   - Active: #23823d (rgb: 35,130,61)
+   - Active Border: #1f7637 (rgb: 31,118,55)
+   ------------------------------- */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../Assets/Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../Assets/Fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../Assets/Fonts/Poppins/Poppins-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.cust-head {
+  color: #6f42c1;;
+}
+
+.navbar-light .navbar-toggler-icon {
+  filter: invert(0.2) brightness(0.8); /* tweak as needed */
+}
+
+
+img.me-2.logos {
+    object-fit: cover;
+}
+
+/* ===============================
+   Solve It Custom Bootstrap Theme
+   =============================== */
+
+/* -------------------------------
+   PRIMARY (Purple / Indigo Active)
+   ------------------------------- */
+.btn-primary,
+.btn-outline-primary,
+.alert-primary,
+.badge.bg-primary,
+.progress-bar.bg-primary,
+.link-primary {
+  /* All customized in detail below */
+   --this-does-nothing: initial;
+}
+
+/* Buttons - Solid */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #6f42c1;
+  --bs-btn-border-color: #6f42c1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #5e36a8;
+  --bs-btn-hover-border-color: #593399;
+  --bs-btn-focus-shadow-rgb: 111, 66, 193;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #6610f2; /* indigo punch */
+  --bs-btn-active-border-color: #5a0ecf;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #6f42c1;
+  --bs-btn-disabled-border-color: #6f42c1;
+}
+
+/* Buttons - Outline */
+.btn-outline-primary {
+  --bs-btn-color: #6f42c1;
+  --bs-btn-border-color: #6f42c1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #6f42c1;
+  --bs-btn-hover-border-color: #6f42c1;
+  --bs-btn-focus-shadow-rgb: 111, 66, 193;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #6610f2;
+  --bs-btn-active-border-color: #5a0ecf;
+  --bs-btn-disabled-color: #6f42c1;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #6f42c1;
+}
+
+/* Alerts */
+.alert-primary {
+  --bs-alert-color: #fff;
+  --bs-alert-bg: #6f42c1;
+  --bs-alert-border-color: #593399;
+}
+
+/* Badges */
+.badge.bg-primary {
+  background-color: #6f42c1 !important;
+}
+
+/* Progress bars */
+.progress-bar.bg-primary {
+  background-color: #6f42c1 !important;
+}
+
+/* Links */
+.link-primary {
+  color: #6f42c1 !important;
+}
+.link-primary:hover,
+.link-primary:focus {
+  color: #5e36a8 !important;
+}
+
+
+/* -------------------------------
+   SECONDARY (GitHub Green)
+   ------------------------------- */
+.btn-secondary,
+.btn-outline-secondary,
+.alert-secondary,
+.badge.bg-secondary,
+.progress-bar.bg-secondary,
+.link-secondary {
+  /* All customized in detail below */
+   --this-does-nothing: initial;
+}
+
+/* Buttons - Solid */
+.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #2ea44f;
+  --bs-btn-border-color: #2ea44f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #278a42;
+  --bs-btn-hover-border-color: #23823d;
+  --bs-btn-focus-shadow-rgb: 46, 164, 79;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #23823d;
+  --bs-btn-active-border-color: #1f7637;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #2ea44f;
+  --bs-btn-disabled-border-color: #2ea44f;
+}
+
+/* Buttons - Outline */
+.btn-outline-secondary {
+  --bs-btn-color: #2ea44f;
+  --bs-btn-border-color: #2ea44f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #2ea44f;
+  --bs-btn-hover-border-color: #2ea44f;
+  --bs-btn-focus-shadow-rgb: 46, 164, 79;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #23823d;
+  --bs-btn-active-border-color: #1f7637;
+  --bs-btn-disabled-color: #2ea44f;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #2ea44f;
+}
+
+/* Alerts */
+.alert-secondary {
+  --bs-alert-color: #fff;
+  --bs-alert-bg: #2ea44f;
+  --bs-alert-border-color: #23823d;
+}
+
+/* Badges */
+.badge.bg-secondary {
+  background-color: #2ea44f !important;
+}
+
+/* Progress bars */
+.progress-bar.bg-secondary {
+  background-color: #2ea44f !important;
+}
+
+/* Links */
+.link-secondary {
+  color: #2ea44f !important;
+}
+.link-secondary:hover,
+.link-secondary:focus {
+  color: #278a42 !important;
+}
+
+/* Carousel */
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+    
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+    
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) grayscale(100); /* turns them black */
+  background-color: rgba(0,0,0,0.5); /* dark circle behind arrow */
+  border-radius: 50%;
+  background-size: 60%, 60%;
+}
+
+/* Contact + Footer tweaks */
+#contact .card { border: 0; }
+#contact .form-label { font-weight: 500; }
+#contact .invalid-feedback { display: none; }
+
+/* show invalid feedback when .was-validated present (Bootstrap approach) */
+#contactForm.was-validated .invalid-feedback { display: block; }
+
+/* footer spacing & icon color */
+footer svg { opacity: .85; vertical-align: middle; }
+footer a:hover svg { opacity: 1; transform: translateY(-1px); transition: transform .15s ease; }
+
+/* make footer links visible on small screens */
+@media (max-width: 575.98px) {
+  footer .col-md-4 { text-align: center !important; margin-bottom: .75rem; }
+}
+
+/* Reviews section */
+#reviews .card {
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+#reviews .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+#reviews img.rounded-circle {
+  object-fit: cover;
+}
+
+
+

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teacher Dashboard — Attendance</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script defer src="../js/t-dashboard.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">ED</div>
+        <div>
+          <h1>SmartEdu — Teacher</h1>
+          <div class="small">Attendance</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="students.html" class="nav-link">Students</a>
+        <a href="attendance.html" class="nav-link active">Attendance</a>
+        <a href="timetable.html" class="nav-link">Timetable</a>
+        <a href="assignments.html" class="nav-link">Assignments</a>
+        <a href="announcements.html" class="nav-link">Announcements</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <label class="small-muted">Select class</label>
+          <select id="selectClass"></select>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input type="date" id="attendanceDate" />
+          <button class="btn" id="btnLoad">Load</button>
+          <button class="btn" id="btnSave">Save</button>
+          <button class="btn ghost" id="btnExport">Export CSV</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Attendance</h2>
+        <table id="attendanceTable">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Roll</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h3>Quick actions</h3>
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="btnMarkAllPresent">Mark All Present</button>
+          <button class="btn ghost" id="btnClearDate">Clear</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal Root -->
+  <div id="modalRoot" class="modal-root"></div>
+
+  <!-- Shared teacher logic -->
+  <script>
+    function renderAttendancePage(){
+      // populate class dropdown
+      const sel = el('#selectClass');
+      sel.innerHTML = state.classes.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+      sel.value = state.classes[0]?.id || '';
+      window.activeClassId = sel.value;
+
+      // change class
+      sel.onchange = () => {
+        activeClassId = sel.value;
+        renderAttendanceTable(el('#attendanceDate').value || new Date().toISOString().slice(0,10));
+      };
+
+      // load attendance
+      el('#btnLoad').onclick = () => {
+        renderAttendanceTable(el('#attendanceDate').value || new Date().toISOString().slice(0,10));
+      };
+
+      // save attendance
+      el('#btnSave').onclick = () => {
+        saveAttendanceFromTable();
+        alert("Attendance saved!");
+      };
+
+      // export attendance
+      el('#btnExport').onclick = () => {
+        const date = el('#attendanceDate').value || new Date().toISOString().slice(0,10);
+        exportAttendanceCsv(date);
+      };
+
+      // mark all present
+      el('#btnMarkAllPresent').onclick = () => {
+        const date = el('#attendanceDate').value || new Date().toISOString().slice(0,10);
+        state.attendance[date] = state.attendance[date] || {};
+        state.students.filter(s => s.classId === activeClassId).forEach(s => state.attendance[date][s.id] = 'present');
+        saveData();
+        renderAttendanceTable(date);
+      };
+
+      // clear date
+      el('#btnClearDate').onclick = () => {
+        const date = el('#attendanceDate').value || new Date().toISOString().slice(0,10);
+        if(confirm("Clear attendance for " + date + "?")){
+          delete state.attendance[date];
+          saveData();
+          renderAttendanceTable(date);
+        }
+      };
+
+      // initial render
+      const today = new Date().toISOString().slice(0,10);
+      el('#attendanceDate').value = today;
+      renderAttendanceTable(today);
+    }
+
+    renderAttendancePage();
+  </script>
+</body>
+</html>
